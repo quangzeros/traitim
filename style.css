@@ -30,6 +30,7 @@ html{
 
 .content{
     background-image: url(./imager_1_29265_700.jpg);
+    will-change: b;
     /* background-attachment: fixed; */
     width: 80rem;
     height: 100%;
@@ -167,4 +168,8 @@ html{
     overflow: hidden;
     width: 1px;
     height: 1px;
+}
+
+.meme{
+    display: none;
 }

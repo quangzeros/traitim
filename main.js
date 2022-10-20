@@ -59,9 +59,7 @@ window.addEventListener('load',function(){
             content.innerHTML = `<h2 class="successN">Awww tớ biết mà :3</h2>`;
             select.innerHTML=``;
             setTimeout(function(){
-                document.querySelector('.meme').innerHTML=`<video width="950" height="560" controls class="video" autoplay>
-                <source src="./Rick Astley - Never Gonna Give You Up (Official Music Video).mp4" type="video/mp4">
-            </video>`
+                document.querySelector('.meme').style.display='block'
             },2000)
         }
 
