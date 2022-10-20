@@ -4,7 +4,9 @@ window.addEventListener('load',function(){
     var audio = document.querySelector('.audio')
     audio.autoplay = true;
     audio.volume = 0.3;
+    var video = document.querySelector('.video')
 
+    video.pause();
     var content = document.querySelector('.content')
     var select = document.querySelector('.select')
     var main = this.document.querySelector('.main')
@@ -59,7 +61,8 @@ window.addEventListener('load',function(){
             content.innerHTML = `<h2 class="successN">Awww tớ biết mà :3</h2>`;
             select.innerHTML=``;
             setTimeout(function(){
-                document.querySelector('.meme').style.display='block'
+                video.play();
+                document.querySelector('.meme').style.visibility ='visible'
             },2000)
         }
 
