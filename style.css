@@ -171,5 +171,5 @@ html{
 }
 
 .meme{
-    display: none;
+    visibility: hidden;
 }
