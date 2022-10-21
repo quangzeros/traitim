@@ -1,45 +1,65 @@
 window.addEventListener('load',function(){
-    const text = ['chúc c 20/10 vui vẻ nha:3','tớ muốn nói là..........','t đã thích c rất lâu rồi',]
-    
-    var audio = document.querySelector('.audio')
-    audio.autoplay = true;
-    audio.volume = 0.3;
-    var video = document.querySelector('.video')
 
-    video.pause();
+
+    const text = ['chúc c 20/10 vui vẻ nha:3','tớ muốn nói là..........','t đã thích c rất lâu rồi']
+    
+
+    var soundEffect = document.querySelector('.audio')
+    soundEffect.volume= 0.2;
     var content = document.querySelector('.content')
     var select = document.querySelector('.select')
     var main = this.document.querySelector('.main')
-    text.forEach(function(item,index){
+    
+    var video = document.querySelector('.video')
+    video.pause();
+    
+    document.querySelector('.start').addEventListener('click',function(){
+        this.remove();
+        text.forEach(function(item,index){
+            setTimeout(function(){
+                
+                setTimeout(function(){
+                    soundEffect.play();
+                },500)
+                setTimeout(function(){
+                    soundEffect.pause();
+                },5000);
+                
+                var line = document.createElement("p")
+                line.innerText = `${item}`;
+            
+                line.classList.add('line')
+            
+                line.classList.add('animation-typewriter')
+            
+                content.appendChild(line);
+            },index*5500)
+    
+        })
         setTimeout(function(){
-
+            setTimeout(function(){
+                soundEffect.play();
+            },500)
+            setTimeout(function(){
+                soundEffect.pause();
+            },5000);
             var line = document.createElement("p")
-            line.innerText = `${item}`;
-        
-            line.classList.add('line')
-        
-            line.classList.add('animation-typewriter')
-        
-            content.appendChild(line);
-        },index*5500)
-
+                line.innerText = `thế c có thích t ko ???:(`;
+            
+                line.classList.add('line')
+            
+                line.classList.add('animation')
+            
+                content.appendChild(line);
+        },3*5500)
+    
+        setTimeout(function(){
+            select.innerHTML=`<button class="btn success">Có :3</button>
+            <button class="btn failure">Không :(</button>`
+            soundEffect.pause();
+        },4*5300)
     })
-    setTimeout(function(){
-        var line = document.createElement("p")
-            line.innerText = `thế c có thích t ko ???:(`;
-        
-            line.classList.add('line')
-        
-            line.classList.add('animation')
-        
-            content.appendChild(line);
-    },3*5500)
 
-    setTimeout(function(){
-        select.innerHTML=`<button class="btn success">Có :3</button>
-        <button class="btn failure">Không :(</button>`
-        document.querySelector('.type-sound').innerHTML =''
-    },4*5300)
 
     let dem = 0;
 
